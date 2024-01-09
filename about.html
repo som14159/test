@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDive Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Tektur:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+        --green:#00ff00;
+        --blue :#0000ff;
+        }
+        @font-face {
+            font-family: 'MyCustomFont'; /* Provide a name for the font family */
+            src: url('BACKTO1982.TTF') format('truetype'); /* Replace 'path/to/' with the actual path to your TTF file */
+            font-weight: lighter;
+            font-style:normal;
+        }
+        body {
+            
+            font-family: 'DM Mono', monospace;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            background-color: var(--green); /* Green background color */
+            color: #0000ff; /* Blue text color */
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar {
+
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            background-color: var(--green);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: #b6ffb6; 
+        }
+
+        header {
+            padding:1%;
+            margin-bottom: 2%;
+            margin-left: 4%;
+            margin-right: 4%;
+            margin-top: 2%;
+            text-align: left;
+            position: relative; /* Position relative for absolute positioning of rectangles */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container h1 {
+            font-family: 'MyCustomFont', monospace;
+            font-size: 2rem;
+            letter-spacing: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left:1%; /* Remove default margin for h1 */
+            transition: letter-spacing 1.3s ease;
+        }
+        .container h1:hover {
+            letter-spacing: 0.7rem;
+        }  
+        a{
+            text-decoration: none;
+        }
+        a:visited {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Use the inherited color (the color defined for the parent element) */
+        } 
+        .content{
+            padding-top: 1em;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-bottom: 0;
+            margin-bottom:0;
+            max-width: 500px;
+            margin-left: 6%;
+            margin-right: 5%;
+            text-align:left;
+            border: 2px solid#0000ff;
+        }     
+        img{
+            margin: auto; /* Center-align the image */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">TechDive</a></h1>
+        </div>
+    </header>
+    <div class="content">
+        This is a personal blog, created to just dump information and learn stuff along the way.
+        There's not really any topic or agenda.
+        Here's a picture of what i look like.<br/><br/>
+        <img src="simpsons_PNG15.png"/>
+    </div>
+        <!-- Add more cards as needed -->
+</body>
+</html>
