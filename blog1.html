@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDive Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Tektur:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <style>
+        :root {
+        --green: rgba(238, 238, 238, 0.925);
+        --blue :rgb(61, 61, 61);
+        }
+        @font-face {
+            font-family: 'MyCustomFont'; /* Provide a name for the font family */
+            src: url('BACKTO1982.TTF') format('truetype'); /* Replace 'path/to/' with the actual path to your TTF file */
+            font-weight: lighter;
+            font-style:normal;
+        }
+        body {
+            
+            font-family: 'DM Mono', monospace;
+            margin: auto;
+            font-weight: bold;
+            font-size:  1.5em;
+            max-width: 1000px;
+            padding: 0;
+            background-color: var(--green); /* Green background color */
+            color: var(--blue); /* Blue text color */
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar {
+
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            background-color: var(--green);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: var(--blue); 
+        }
+
+        header {
+            padding:1%;
+            margin-bottom: 2%;
+            margin-left: 4%;
+            margin-right: 4%;
+            margin-top: 2%;
+            text-align: left;
+            position: relative; /* Position relative for absolute positioning of rectangles */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container h1 {
+            font-family: 'MyCustomFont', monospace;
+            font-size: 2rem;
+            
+            letter-spacing: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left:1%; /* Remove default margin for h1 */
+            transition: letter-spacing 1.3s ease;
+        }
+        .container h1:hover {
+            letter-spacing: 0.7rem;
+        }
+
+        .container span {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right:1%;
+            transition: letter-spacing 1s ease;
+        }
+        .container span:hover {
+            letter-spacing: 0.2rem;
+        }
+        #content{
+            text-align: left;
+            margin-top: 3em;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        a:visited {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Use the inherited color (the color defined for the parent element) */
+        }  
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1 style="text-align: center;">  Genetic Algorithms</h1>
+        <p style="text-align: center;">January 15 2024</p><br/>
+        <p>
+            Algorithms that can evolve, they mimic the process of natural selection and come under the field of evolutionary computation, we consider an initial population of solutions which after multiple iterations become more and more evolved ("more optimal").<br/>
+            <br/>One of the places it has been applied is in the travelling salesman problem (TSP).
+            <br/><br/><i> "Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city? "</i><br/>
+            <br/><div style="text-align: center;"><img src="graph.png" style="text-align: center; width: 400px;"></img></div><br/>
+            <br/>This is a NP-Hard problem which would mean that solutions that gurantee optimality can be expensive in terms of computation, one of such classical algorithms is the Held-Karp Algorithm, it uses dynamic programming to store the minimum cost of the travelling through a set of vertices given the starting and ending points, this ends up having a time complexity of  \(O(n^2 \cdot 2^n)\) and a space complexity of \(O(n \cdot 2^n)\), which won't scale for large input sizes very well. 
+               
+        <br/><br/>Genetic algorithms are a much more interesting approach, you consider an initial population of paths, now these paths are evaluated using a fitness function, once this is done the algorithm chooses paths with the highest fitness and allows them to crossover, choosing a good crossover algorithm is essential because we need to ensure that the crossover of two highly fit solutions is also highly fit, as we keep iterating we end up with more and more optimal solutions.
+            <h2>Coverage Path Planning</h2>
+            
+            In TSP, we try to find an optimal tour for set of discrete points similarly the coverage path planning problem involves scanning an entire an area in the most optimal way, one of the most naive approaches is to simply follow a lawnmower pattern, it may not be the most optimal as it has a lot of turns and is hard to implement for irregularly shaped areas. 
+            <br/><br/><div style="text-align: center;"><img src="lawn.png" style="text-align: center; width: 400px;"></img></div><br/>
+            Another approach to solving this issue is by fitting as many circles as you can in the given area, this can be done using hexagonal packing, place the rectangle in a pattern of hexagonally placed circles, and find the minimum number of circles required, each of these circles represent the range of the UAV's deployed network.
+            <br/><br/><div style="text-align: center;"><img src="circle.png" style="text-align: center; width: 400px;"></img></div><br/>
+            Once this is done we can simply apply the Genetic Algorithm approach of the TSP on the the centres of the circles within the area as the waypoints.
+        </p>
+
+    </div>
+        <!-- Add more cards as needed -->
+</body>
+</html>

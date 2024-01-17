@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
     <style>
         :root {
-        --green:#00ff00;
-        --blue :#0000ff;
+        --green:#dcfd73;
+        --blue :#002df5;
         }
         @font-face {
             font-family: 'MyCustomFont'; /* Provide a name for the font family */
@@ -27,7 +27,7 @@
             margin: 0;
             padding: 0;
             background-color: var(--green); /* Green background color */
-            color: #0000ff; /* Blue text color */
+            color: var(--blue); /* Blue text color */
             overflow-y: scroll;
             overflow-x: hidden;
         }
@@ -47,7 +47,7 @@
         ::-webkit-scrollbar-thumb {
             -webkit-border-radius: 10px;
             border-radius: 10px;
-            background: #b6ffb6; 
+            background: #648cbc; 
         }
 
         header {
@@ -90,25 +90,30 @@
         .container span:hover {
             letter-spacing: 0.2rem;
         }
-
-
+        #content{
+            display: flex;
+            justify-items: center;
+            margin-left: 6vw;
+            margin-top: 6%;
+            padding-right: 2vw;
+            flex-wrap: wrap;
+            gap:5em;
+        }
         .card {
             display: block;
-            width: 60vw;
-            height: 40vh;
             border: 2.5px solid var(--blue);
-            padding: 15px;
-            margin-left: 10vw;
-            margin-top: 6%;
-            margin-bottom: 4%;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+            width: fit-content;
+            max-width: 400px;
+            padding-left: 2vw;
+            padding-right: 2vw;
             box-shadow: 10px -10px 0 -2px var(--green), 10px -10px var(--blue);
             transition: box-shadow 1s, top 1s, left 1s;
-            position: relative;
-            top: 0;
-            left: 0;
-            cursor: pointer;
         }
-
+        .card p{
+            padding-right: 1vw;
+        }
         .card:hover {
         box-shadow: 0 0 0 -2px var(--green), 0 0 0 0 var(--blue);
         }
@@ -128,18 +133,23 @@
             <span><a href="about.html">About</a></span>
         </div>
     </header>
+    <div id="content">
+        <a href="blog1.html">
         <div class="card">
-            <h2>Blog Post Title 1</h2>
-            <p>Content of your blog post goes here...</p>
+            January 11 2024<br/><br/>
+            <h2>Genetic Algorithms</h2><br/>
+            <p>Algorithms that can evolve ??? Trying to find a path for an UAV so that it can cover any given area.</p>
+
         </div>
-
-
-
-    <div class="card">
-        <h2>Blog Post Title 2</h2>
-        <p>Content of your second blog post goes here...</p>
+        </a>
+        <div class="card">
+            January 16 2024<br/><br/>
+            <h2>P = NP</h2><br/>
+            <p>Gaining an understanding of understandings, what is this P stuff all about?</p>
+            
+        </div>
+        
     </div>
-
         <!-- Add more cards as needed -->
 </body>
 </html>
